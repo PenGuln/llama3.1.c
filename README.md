@@ -63,7 +63,7 @@ To test the openMP complied inference speed, you'll need to complile with
 make runomp
 ```
 
-Then run the same script for evaluation.
+Then run the same script with `OMP_NUM_THREADS` flag.
 ```bash
-./test llama3.1_8b_instruct.bin -z tokenizer.bin -n 128
+OMP_NUM_THREADS=64 ./test llama3.1_8b_instruct.bin -z tokenizer.bin -n 128
 ```
