@@ -1,0 +1,16 @@
+*.bin
+Llama-3.1-8B-Instruct
+.cache
+.github
+assets
+doc
+__pycache__
+*.bat
+configurator.py
+model.py
+run
+runq
+run.ipynb
+sample.py
+test
+*.model
