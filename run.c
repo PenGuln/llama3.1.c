@@ -261,6 +261,7 @@ float* forward(Transformer* transformer, int token, int pos) {
         matmul(s->v, s->xb, w->wv + l*dim*kv_dim, dim, kv_dim);
 
         // RoPE relative positional encoding: complex-valued rotate q and k in each head
+        #pragma omp parallel for
         for (int i = 0; i < p->n_heads; i++) {
             for (int j = 0; j < head_size; j += 2) {
                 float freq = 1.0f / powf(500000.0f, (float)j / (float)head_size);
